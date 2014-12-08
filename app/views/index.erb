@@ -1,0 +1,9 @@
+<h1><%= @title %></h1>
+
+<ul>
+  <% Meetup.all.each do |meetup| %>
+    <li><a href="/meetup/<%= meetup.id %>"><%= meetup.name %></a></li>
+  <% end %>
+</ul>
+
+<a href="/new" class="button">Add New Meetup</a>

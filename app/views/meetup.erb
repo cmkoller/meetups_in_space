@@ -1,0 +1,56 @@
+<div class="primary">
+  <h1><%= @meetup.name %></h1>
+
+  <form action="/meetup/<%= @meetup.id %>" method="post">
+    <% if is_member?(@meetup.id, session[:user_id]) %>
+      <input type="hidden" name="leave" value="true">
+      <button type="submit">Leave Meetup</button>
+    <% else %>
+      <input type="hidden" name="join" value="true">
+      <button type="submit">Join Meetup</button>
+    <% end %>
+  </form>
+
+  <h3>Description:</h3>
+  <p>
+    <%= @meetup.description %>
+  </p>
+
+  <h3>Location:</h3>
+  <p>
+    <%= @meetup.location %>
+  </p>
+  <a href="/">Back to Meetups List</a>
+
+  <% if is_member?(@meetup.id, session[:user_id]) %>
+    <h3>Write a Comment:</h3>
+    <form action="/meetup/<%= @meetup.id %>" method="post">
+      <label for="title">Title:</label>
+      <input type='Text' name='title' >
+      <label for="body">Comment:</label>
+      <input type='Text' name='body' required >
+      <button type='submit'>Submit!</button>
+    </form>
+
+    <div class="comment-area">
+      <h3>Comments:</h3>
+      <% Comment.where(meetup_id: @meetup.id).order(created_at: :desc).to_a.each do |comment| %>
+      <div class="comment">
+        <h5><%= comment.title %></h5>
+        <p><%= comment.body %></p>
+      </div>
+      <% end %>
+    </div>
+  <% end %>
+
+</div>
+
+
+<div class="sidebar">
+  <h3>Members:</h3>
+  <ul>
+    <% @meetup.users.each do |user| %>
+    <li><img src="<%= user.avatar_url %>"><%= user.username %></li>
+    <% end %>
+  </ul>
+</div>
