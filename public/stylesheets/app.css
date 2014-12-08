@@ -53,12 +53,14 @@ input, textarea, button {
 
 .primary {
   float: left;
+  width: 60%;
 }
 
 .sidebar {
   float: right;
   border: 1px solid black;
   padding: 0 20px;
+  width: 30%;
 }
 
 .primary, .sidebar {
@@ -73,9 +75,55 @@ input, textarea, button {
   padding-left: 0;
 }
 
-.sidebar ul img {
-  width: 52px;
+.avatar.small {
+  width: 62px;
   border-radius: 50px;
-  padding-right: 10px;
+  margin-right: 10px;
   vertical-align: middle;
+  border: 1px solid black;
+}
+
+/*
+====================
+Comments Section
+====================
+*/
+
+.comments {
+  clear: both;
+  padding-top: 30px;
+}
+
+.comment-entry,
+.comment-area {
+  padding: 15px 35px;
+  margin-top: 30px;
+  width: 80%;
+}
+
+.comment-entry {
+  border: 1px solid black;
+}
+
+.comment-area {
+  border-left: 3px double black;
+  border-right: 3px double black;
+}
+
+.comment {
+  background-color: #D5DED9;
+  padding: 20px;
+  color: #000;
+  margin: 20px 0;
+  border-radius: 20px;
+}
+
+.comment h6 {
+  display: inline;
+}
+
+.content {
+  padding-left: 80px;
+  top: -30px;
+  position: relative;
 }
