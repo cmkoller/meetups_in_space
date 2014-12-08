@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Lobster);
 
 body {
   background-image: url('/images/stardust.png');
@@ -12,13 +13,16 @@ a:visited {
 
 a.logo {
   color: #fff;
-  font-size: 1.8rem;
+  font-size: 2.8rem;
   text-decoration: none;
+  font-family: 'Lobster';
+  font-weight: normal;
 }
 
 .container {
   max-width: 1024px;
   margin: 0 auto;
+  position: relative;
 }
 
 .top-bar {
@@ -27,7 +31,10 @@ a.logo {
 
 .top-bar-section {
   display: inline-block;
-  float: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  line-height: 2.8rem;
 }
 
 .top-bar-section li {
@@ -37,7 +44,7 @@ a.logo {
 
 .logo {
   display: inline-block;
-  margin: 1em 0;
+  margin: 1rem 0;
 }
 
 .flash {
@@ -75,12 +82,21 @@ input, textarea, button {
   padding-left: 0;
 }
 
+.avatar {
+  border: 1px solid black;
+  border-radius: 50px;
+}
+
 .avatar.small {
   width: 62px;
-  border-radius: 50px;
-  margin-right: 10px;
   vertical-align: middle;
-  border: 1px solid black;
+  margin-right: 10px;
+}
+
+.avatar.extra-small {
+  width: 40px;
+  vertical-align: sub;
+  margin-left: 4px;
 }
 
 /*

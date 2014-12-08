@@ -15,7 +15,10 @@
 
     <ul class="top-bar-section">
       <% if signed_in? %>
-        <li>Signed in as <%= current_user.username %></a></li>
+        <li>
+          Signed in as <%= current_user.username %>
+          <img class="avatar extra-small" src="<%= User.find(session[:user_id]).avatar_url %>">
+        </li>
         <li><a href="/sign_out">Sign out</a></li>
       <% else %>
         <li><a href="/auth/github">Sign in</a></li>
